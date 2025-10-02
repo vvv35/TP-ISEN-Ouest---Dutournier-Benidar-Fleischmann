@@ -70,7 +70,56 @@ html {
 
 
 
-
+/* IMAGES */
+.dp-section {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+.dp-section h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #000;
+}
+.dp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+.dp-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  transition: transform 0.2s ease;
+padding: 3px 3px 0;
+position: relative;
+}
+.dp-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+.dp-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.dp-card p {
+padding: 1px 0.5em;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  position: relative;
+background-color: #05819d;
+color: white;
+font-weight: bold;
+display: inline;
+position: absolute;
+  bottom: 1em;
+  left: 0;
+  margin: 0;
+}
 
 
 
