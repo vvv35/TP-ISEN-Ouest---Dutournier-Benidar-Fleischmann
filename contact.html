@@ -2,7 +2,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
+	<title>Contactez-nous — ISEN Ouest (reproduction)</title>
     <style>
 html {
     font-family: Open Sans,sans-serif;
@@ -168,6 +168,113 @@ html {
   font-family: Arial, sans-serif;
   font-size: 14px;
 }
+
+/* Page Contact */
+  /* centered single-column card */
+  .contact-card {
+    max-width: 720px;
+    margin: 2em auto;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 6px 24px rgba(12,12,12,0.4);
+    padding: 28px;
+    box-sizing: border-box;
+    border: 1px solid #e6e6e6;
+  }
+
+  .contact-card h1{
+    margin:0 0 10px 0;
+    font-size:28px;
+    font-weight:700;
+    color:#000;
+  }
+
+  .contact-card .lead{
+    margin:0 0 18px 0;
+    color:#6b6b6b;
+    font-size:15px;
+    line-height:1.5;
+  }
+
+  .notice {
+    background: #fff8f9;
+    border-left: 4px solid #c8102e;
+    color:#333;
+    padding:10px 12px;
+    border-radius:4px;
+    margin-bottom:18px;
+    font-size:14px;
+  }
+
+  form.contact-form {
+    display:block;
+  }
+
+  .form-row {
+    display:flex;
+    gap:12px;
+    margin-bottom: 14px;
+    align-items:flex-start;
+    flex-wrap:wrap;
+  }
+
+  /* full width row (for selects, inputs, textarea) */
+  .w-100 { width:100%; }
+
+  label.field-label{
+    display:block;
+    font-size:14px;
+    margin-bottom:6px;
+    color:#222;
+  }
+
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"],
+  select,
+  textarea {
+    width:100%;
+    padding:10px 12px;
+    border:1px solid #d7d7d7;
+    border-radius:6px;
+    font-size:14px;
+    box-sizing:border-box;
+    background:#fff;
+    color:#111;
+  }
+
+  textarea { min-height:140px; resize:vertical; }
+
+  /* group of small radios inline */
+  .inline-group { display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+  .inline-group label{ font-size:14px; color:#222; margin:0; display:flex; align-items:center; gap:8px; }
+
+  .small-note { font-size:13px; color:#6b6b6b; margin-top:6px; }
+
+  /* consent row */
+  .consent-row { display:flex; gap:8px; align-items:center; margin-bottom:12px; flex-wrap:wrap; }
+
+  /* submit */
+  .actions { margin-top:8px; display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
+  .btn-primary {
+    background: #c8102e;
+    color:#fff;
+    padding:10px 18px;
+    border-radius:6px;
+    border:0;
+    font-weight:700;
+    font-size:15px;
+    cursor:pointer;
+    text-decoration:none;
+    display:inline-block;
+  }
+  .btn-primary:hover { background:#a00b23; }
+
+  .helper-link { font-size:14px; color:#6b6b6b; text-decoration:none; }
+  .helper-link:hover { text-decoration:underline; color:#000; }
+
+  /* honeypot hidden */
+  .hp { position: absolute; left: -9999px; top: auto; width:1px; height:1px; overflow:hidden; }
     </style>
 </head>
 <body>
@@ -186,6 +293,145 @@ html {
     </nav>
   </div>
 </header>
+
+<div class="contact-card" aria-labelledby="contact-title">
+    <h1 id="contact-title">Contactez-nous</h1>
+
+    <!-- Intro / notice (copie du texte visible sur la page) -->
+    <p class="lead">
+      Remplissez le formulaire ci-dessous pour nous envoyer votre demande.
+    </p>
+
+    <div class="notice">
+      « * » indique les champs nécessaires
+    </div>
+
+    <form class="contact-form" action="#" method="post" novalidate>
+      <!-- Vous êtes ? (profil) -->
+      <div class="form-row w-100">
+        <div style="width:100%;">
+          <label class="field-label" for="profile">Vous êtes ? *</label>
+          <select id="profile" name="profile" required>
+            <option value="">Sélectionnez votre profil</option>
+            <option>Particulier</option>
+            <option>Professionnel</option>
+            <option>Chercheur</option>
+            <option>Étudiant étranger</option>
+            <option>Journaliste</option>
+            <option>Prestataire</option>
+            <option>Autre</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Société (optionnel) -->
+      <div class="form-row w-100">
+        <div style="width:100%;">
+          <label class="field-label" for="company">Société</label>
+          <input id="company" name="company" type="text" placeholder="Nom de la société">
+        </div>
+      </div>
+
+      <!-- Civilité -->
+      <div class="form-row w-100">
+        <div style="width:100%;">
+          <label class="field-label">Civilité *</label>
+          <div class="inline-group" role="radiogroup" aria-labelledby="civ-label">
+            <label><input type="radio" name="civ" value="Mme" required> Madame</label>
+            <label><input type="radio" name="civ" value="M."> Monsieur</label>
+            <label><input type="radio" name="civ" value="Autre"> Autre</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Prénom / Nom -->
+      <div class="form-row row-2col w-100">
+        <div class="col">
+          <label class="field-label" for="firstname">Prénom *</label>
+          <input id="firstname" name="firstname" type="text" required>
+        </div>
+        <div class="col">
+          <label class="field-label" for="lastname">Nom *</label>
+          <input id="lastname" name="lastname" type="text" required>
+        </div>
+      </div>
+
+      <!-- Email / Confirm email -->
+      <div class="form-row row-2col w-100">
+        <div class="col">
+          <label class="field-label" for="email">Email *</label>
+          <input id="email" name="email" type="email" placeholder="Saisissez un e-mail" required>
+        </div>
+        <div class="col">
+          <label class="field-label" for="email2">Confirmez l’e-mail *</label>
+          <input id="email2" name="email2" type="email" placeholder="Confirmez l’e-mail" required>
+        </div>
+      </div>
+
+      <!-- Téléphone -->
+      <div class="form-row w-100">
+        <div style="width:100%;">
+          <label class="field-label" for="phone">Téléphone *</label>
+          <input id="phone" name="phone" type="tel" placeholder="+33 6 12 34 56 78" required>
+        </div>
+      </div>
+
+      <!-- Objet -->
+      <div class="form-row w-100">
+        <div style="width:100%;">
+          <label class="field-label" for="subject">Objet *</label>
+          <select id="subject" name="subject" required>
+            <option value="">Sélectionnez l'objet de votre demande</option>
+            <option>Demande d'information</option>
+            <option>Relations entreprises</option>
+            <option>International</option>
+            <option>Recherche</option>
+            <option>Service communication</option>
+            <option>Contact presse</option>
+            <option>Autre demande</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Message -->
+      <div class="form-row w-100">
+        <div style="width:100%;">
+          <label class="field-label" for="message">Message *</label>
+          <textarea id="message" name="message" required placeholder="Votre message..."></textarea>
+        </div>
+      </div>
+
+      <!-- Communication opt-in -->
+      <div class="form-row w-100">
+        <label class="inline-group" for="comm">
+          <input id="comm" name="comm" type="checkbox"> J’accepte de recevoir des informations de la part de ISEN Ouest.
+        </label>
+      </div>
+
+      <!-- Consentement -->
+      <div class="form-row w-100">
+        <label class="inline-group" for="consent">
+          <input id="consent" name="consent" type="checkbox" required> J’accepte la <a class="helper-link" href="https://isen-ouest.fr/politique-de-confidentialite/" target="_blank" rel="noopener">politique de confidentialité</a>.
+        </label>
+      </div>
+
+      <!-- Anti-spam honeypot (invisible to users) -->
+      <div class="hp" aria-hidden="true">
+        <label for="company_hp">Company</label>
+        <input id="company_hp" name="company_hp" type="text" value="">
+      </div>
+
+      <!-- Actions -->
+      <div class="actions">
+        <button type="submit" class="btn-primary">Envoyer</button>
+      </div>
+
+      <!-- Data processing note -->
+      <p class="small-note" style="margin-top:12px;">
+        Nous traitons les données recueillies pour répondre à votre demande. Pour en savoir plus sur la gestion de vos données personnelles et pour exercer vos droits, reportez-vous à la <a class="helper-link" href="https://isen-ouest.fr/politique-de-confidentialite/" target="_blank" rel="noopener">politique de confidentialité</a>.
+      </p>
+    </form>
+  </div>
 
 <footer class="site-footer">
   <div class="footer-container">
